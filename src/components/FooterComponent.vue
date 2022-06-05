@@ -42,7 +42,7 @@
         </div>
         <div class="footer_down-section_container">
             <div class="footer_down-section">
-                <button>SIGN-UP NOW!</button>
+                <a class="footer_button" href="#">SIGN-UP NOW!</a>
                 <div class="social-box">
                     <a href="#">FOLLOW US</a>
                     <a href="#"><img src="../assets/img/footer-facebook.png" alt="footer-facebook.png"></a>
@@ -119,11 +119,14 @@ export default {
     .footer_down-section {
         display: flex;
         justify-content: space-between;
-        button {
-            background-color: transparent;
+        .footer_button {
             color: white;
             border: 1px solid var(--primary-color);
             padding: 12px;
+            text-decoration: none;
+            &:hover {
+                background-color: var(--primary-color);
+            }
         }
         .social-box {
             display: flex;

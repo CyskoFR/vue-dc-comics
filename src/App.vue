@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <HeaderComponent class="container"/>
+  <div class="app" id="app">
+    <HeaderComponent/>
     <MainComponent/>
     <FooterComponent/>
   </div>
@@ -23,5 +23,13 @@ export default {
 </script>
 
 <style lang="scss">
+
 @import './assets/style/global.scss';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 </style>

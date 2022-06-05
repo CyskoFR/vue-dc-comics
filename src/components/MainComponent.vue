@@ -27,12 +27,16 @@ export default {
 
 <style lang="scss" scoped>
     main {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         color: white;
+        flex-grow: 1;
     }
 
     .main_up-section_container {
         background-color: var(--main-color);
+        flex-grow: 1;
     }
 
     .main_down-section_container {

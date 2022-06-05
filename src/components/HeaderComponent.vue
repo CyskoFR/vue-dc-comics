@@ -1,13 +1,15 @@
 <template>
-    <header class="header">
-        <div class="header_logo">
-            <img src="../assets/img/dc-logo.png" alt="dc-logo.png">
+    <header>
+        <div class="header_container">
+            <div class="header_logo">
+                <img src="../assets/img/dc-logo.png" alt="dc-logo.png">
+            </div>
+            <nav class="header_nav">
+                <ul>
+                    <li v-for="(link, i) in links" :key="i" :class="{active : link.current}"><a :href="link.url">{{link.text}}</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="header_nav">
-            <ul>
-                <li v-for="(link, i) in links" :key="i" :class="{active : link.current}"><a :href="link.url">{{link.text}}</a></li>
-            </ul>
-        </nav>
     </header>
 </template>
 
@@ -76,18 +78,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .header {
+    .header_container {
         display: flex;
         justify-content: space-between;
-        padding: 16px 0;
+        padding: 8px 0;
+        margin: auto;
+        max-width: var(--container-md);
 
-        &_logo {
+        .header_logo {
             display: flex;
             margin-left: 16px;
             height: 70px;
         }
 
-        &_nav {
+        .header_nav {
             display: flex;
             ul {
                 display: flex;
