@@ -1,7 +1,18 @@
 <template>
     <main>
-        <div class="main-container">
-            Placeholder
+        <div class="main_up-section_container">
+            <div class="main_up-section">
+                Placeholder
+            </div>
+        </div>
+        <div class="main_down-section_container">
+            <div class="main_down-section">
+                <a href="#"><img src="../assets/img/buy-comics-digital-comics.png" alt="">DIGITAL COMICS</a>
+                <a href="#"><img src="../assets/img/buy-comics-merchandise.png" alt="">DC MERCHANDISE</a>
+                <a href="#"><img src="../assets/img/buy-comics-subscriptions.png" alt="">SUBSCRIPTION</a>
+                <a href="#"><img src="../assets/img/buy-comics-shop-locator.png" alt="">COMIC SHOP LOCATOR</a>
+                <a href="#"><img src="../assets/img/buy-dc-power-visa.svg" alt="">DC POWER VISA</a>
+            </div>
         </div>
     </main>
 </template>
@@ -17,15 +28,40 @@ export default {
 <style lang="scss" scoped>
     main {
         width: 100%;
-        background-color: var(--main-color);
         color: white;
     }
 
-    .main-container {
+    .main_up-section_container {
+        background-color: var(--main-color);
+    }
+
+    .main_down-section_container {
+        background-color: var(--primary-color);
+    }
+
+    .main_up-section, .main_down-section {
         margin: auto;
-        width: 100%;
         max-width: var(--container-md);
         padding: var(--container-md-padding);
     }
+
+    .main_down-section {
+        display: flex;
+
+        a {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+    }
+
     
 </style>

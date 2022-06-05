@@ -101,7 +101,6 @@ export default {
                         text-decoration: none;
                         color: black;
                         font-weight: 600;
-                        font-size: .875rem;
                     }
                 }
             }
