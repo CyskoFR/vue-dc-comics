@@ -3,11 +3,13 @@
         <div class="main-jumbo"></div>
         <div class="main_up-section_container">
             <div class="main_up-section">
+                <h2 class="main-title">CURRENT SERIES</h2>
                 <div class="card" v-for="(card, i) in cards" :key="i">
                     <div class="card-img" :style="{ backgroundImage: 'url(' + card.thumb + ')' }">
                     </div>
                     <p>{{card.series}}</p>
                 </div>
+                <a class="main-button" href="#">LOAD MORE</a>
             </div>
         </div>
         <div class="main_down-section_container">
@@ -56,10 +58,29 @@ export default {
         flex-grow: 1;
     }
 
+    .main_up-section, .main_down-section {
+        margin: auto;
+        max-width: var(--container-md);
+        padding: var(--container-md-padding);
+    }
+
     .main_up-section {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding: 40px 0;
+
+        .main-title {
+            position: absolute;
+            top: -16px;
+            left: 50px;
+            display: inline-block;
+            color: white;
+            background-color: var(--primary-color);
+            font-size: 1rem;
+            padding: 8px 14px;
+        }
 
         .card {
             display: flex;
@@ -72,6 +93,12 @@ export default {
                 width: 90%;
             }
 
+            p {
+                text-transform: uppercase;
+                font-size: .875rem;
+                margin: 10px 0;
+            }
+
         }
 
         .card-img {
@@ -79,16 +106,21 @@ export default {
             width: 90%;
             background-size: cover;
         }
+
+        .main-button {
+            position: absolute;
+            bottom: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-size: .75rem;
+            padding: 6px 48px;
+        }
+
     }
 
     .main_down-section_container {
         background-color: var(--primary-color);
-    }
-
-    .main_up-section, .main_down-section {
-        margin: auto;
-        max-width: var(--container-md);
-        padding: var(--container-md-padding);
     }
 
     .main_down-section {
