@@ -26,10 +26,4 @@ export default {
 
 @import './assets/style/global.scss';
 
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 </style>

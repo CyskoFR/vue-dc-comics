@@ -1,8 +1,13 @@
 <template>
     <main>
+        <div class="main-jumbo"></div>
         <div class="main_up-section_container">
             <div class="main_up-section">
-                Placeholder
+                <div class="card" v-for="(card, i) in cards" :key="i">
+                    <div class="card-img" :style="{ backgroundImage: 'url(' + card.thumb + ')' }">
+                    </div>
+                    <p>{{card.series}}</p>
+                </div>
             </div>
         </div>
         <div class="main_down-section_container">
@@ -19,8 +24,15 @@
 
 <script>
 
+import json from '../assets/dc-comics.json';
+
 export default {
     name: 'MainComponent',
+    data() {
+        return {
+            cards: json,
+        }
+    }
 }
 
 </script>
@@ -31,12 +43,42 @@ export default {
         flex-direction: column;
         width: 100%;
         color: white;
-        flex-grow: 1;
+    }
+
+    .main-jumbo {
+        background-image: url(../assets/img/jumbotron.jpg);
+        background-size: cover;
+        height: 400px;
     }
 
     .main_up-section_container {
         background-color: var(--main-color);
         flex-grow: 1;
+    }
+
+    .main_up-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: baseline;
+            width: 15%;
+
+            img, p {
+                width: 90%;
+            }
+
+        }
+
+        .card-img {
+            height: 160px;
+            width: 90%;
+            background-size: cover;
+        }
     }
 
     .main_down-section_container {
@@ -66,6 +108,5 @@ export default {
         }
 
     }
-
     
 </style>

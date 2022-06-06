@@ -96,9 +96,15 @@ export default {
             ul {
                 display: flex;
                 list-style-type: none;
+
+                .active a {
+                    color: var(--primary-color);
+                }
+
                 li {
                     display: flex;
                     margin: 0.5rem;
+                    
                     a {
                         display: flex;
                         align-self: center;
@@ -106,13 +112,12 @@ export default {
                         color: black;
                         font-weight: 600;
                     }
+
                 }
             }
         }
         
-        .active a {
-            color: var(--primary-color);
-        }
+        
     }
 
 </style>
